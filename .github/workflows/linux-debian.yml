@@ -111,7 +111,7 @@ jobs:
           ./ports/ci/linux-debian/deploy.sh
     - name: VirusTotal Scan
       uses: crazy-max/ghaction-virustotal@v4
-      if: ${{ matrix.upload }}
+      if: ${{ matrix.upload && secrets.VT_API_KEY != '' }}
       with:
         vt_api_key: ${{ secrets.VT_API_KEY }}
         files: |
@@ -370,7 +370,7 @@ jobs:
           ./ports/ci/linux-debian/deploy.sh
     - name: VirusTotal Scan
       uses: crazy-max/ghaction-virustotal@v4
-      if: ${{ matrix.upload }}
+      if: ${{ matrix.upload && secrets.VT_API_KEY != '' }}
       with:
         vt_api_key: ${{ secrets.VT_API_KEY }}
         files: |
