@@ -110,7 +110,7 @@ jobs:
           chmod +x ports/ci/linux-ubuntu/deploy.sh
           ./ports/ci/linux-ubuntu/deploy.sh
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: ${{ matrix.upload }}
       with:
         name: ubuntu-x86_64-packages-${{ matrix.dockerimg }}-${{ matrix.compiler }}-${{ github.sha }}
@@ -243,7 +243,7 @@ jobs:
         files: |
           webcamoid-packages/linux-ubuntu_latest-gcc/*
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: ${{ matrix.upload }}
       with:
         name: ubuntu-multiarch-packages-${{ matrix.distro }}-${{ matrix.architecture }}-${{ matrix.compiler }}-${{ github.sha }}

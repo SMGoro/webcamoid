@@ -117,7 +117,7 @@ jobs:
         files: |
           webcamoid-packages/linux-latest-gcc/*
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: ${{ matrix.upload }}
       with:
         name: debian-x86_64-packages-${{ matrix.dockerimg }}-${{ matrix.compiler }}-${{ github.sha }}
@@ -376,7 +376,7 @@ jobs:
         files: |
           webcamoid-packages/linux-latest-gcc/*
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: ${{ matrix.upload }}
       with:
         name: debian-arm64-packages-${{ matrix.dockerimg }}-${{ matrix.compiler }}-${{ github.sha }}

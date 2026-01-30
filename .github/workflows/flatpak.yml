@@ -39,7 +39,7 @@ jobs:
         chmod +x ports/ci/flatpak/deploy.sh
         ./ports/ci/flatpak/deploy.sh
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: flatpak-packages-${{ github.sha }}
         path: webcamoid-packages/linux/*

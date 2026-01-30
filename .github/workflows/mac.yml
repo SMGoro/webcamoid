@@ -36,7 +36,7 @@ jobs:
         files: |
           webcamoid-packages/mac/*
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: ${{ matrix.upload }}
       with:
         name: mac-packages-${{ github.sha }}
