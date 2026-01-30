@@ -30,12 +30,12 @@ set TOOLSDIR=C:\Qt\Tools\QtCreator
 set FFMPEG_PATH=%CD%\ffmpeg-%FFMPEG_VERSION%-full_build-shared
 set GSTREAMER_DEV_PATH=C:\gstreamer\1.0\x86_64
 set PATH=%QTDIR%\bin;%TOOLSDIR%\bin;%FFMPEG_PATH%\bin;%GSTREAMER_DEV_PATH%\bin;%PATH%
-set INSTALL_PREFIX=%CD%/webcamoid-data
-set PACKAGES_DIR=%CD%/webcamoid-packages/windows
-set BUILD_PATH=%CD%/build
-set PYTHONPATH=%CD%/DeployTools
+set INSTALL_PREFIX=%CD%\webcamoid-data
+set PACKAGES_DIR=%CD%\webcamoid-packages\windows
+set BUILD_PATH=%CD%\build
+set PYTHONPATH=%CD%\DeployTools
 
 python DeployTools/deploy.py ^
     -d "%INSTALL_PREFIX%" ^
-    -c "%BUILD_PATH%/package_info.conf" ^
+    -c "%BUILD_PATH%\package_info.conf" ^
     -o "%PACKAGES_DIR%"
