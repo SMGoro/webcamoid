@@ -233,6 +233,19 @@ EOF
 
     # Create the multi-architecture package
 
+    # Convert lastArch to match the format used when creating config files
+    lastArch_=${lastArch}
+    case "${lastArch_}" in
+        arm64-v8a)
+            lastArch_=arm64_v8a
+            ;;
+        armeabi-v7a)
+            lastArch_=armv7
+            ;;
+        *)
+            ;;
+    esac
+
     cat << EOF > package_info_hide_arch.conf
 [Package]
 targetArch = any
@@ -249,7 +262,7 @@ EOF
         -d "${PWD}/webcamoid-data" \
         -c "${PWD}/build/package_info.conf" \
         -c "${PWD}/build/package_info_android.conf" \
-        -c "${PWD}/overwrite_syslibdir_${lastArch}.conf" \
+        -c "${PWD}/overwrite_syslibdir_${lastArch_}.conf" \
         -c "${PWD}/package_info_hide_arch.conf" \
         -c "${PWD}/speedup_apk_build.conf" \
         -c "${PWD}/build_aab_package.conf" \
