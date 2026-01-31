@@ -113,7 +113,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ matrix.upload }}
       with:
-        name: ubuntu-x86_64-packages-${{ matrix.dockerimg }}-${{ matrix.compiler }}-${{ github.sha }}
+        name: ubuntu-x86_64-packages-${{ matrix.compiler }}-${{ github.sha }}
         path: webcamoid-packages/linux-lunar-gcc/*
         retention-days: 90
   multiarch:
@@ -246,6 +246,6 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ matrix.upload }}
       with:
-        name: ubuntu-multiarch-packages-${{ matrix.distro }}-${{ matrix.architecture }}-${{ matrix.compiler }}-${{ github.sha }}
+        name: ubuntu-multiarch-packages-${{ matrix.architecture }}-${{ matrix.compiler }}-${{ github.sha }}
         path: webcamoid-packages/linux-ubuntu_latest-gcc/*
         retention-days: 90
