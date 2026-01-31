@@ -23,6 +23,7 @@ if not "%GITHUB_REF_NAME%" == "" set GIT_BRANCH_NAME="%GITHUB_REF_NAME%"
 if not "%CIRRUS_BRANCH%" == "" set GIT_BRANCH_NAME="%CIRRUS_BRANCH%"
 if "%GIT_BRANCH_NAME%" == "" set GIT_BRANCH_NAME=master
 
+if exist DeployTools rd /s /q DeployTools
 git clone "https://github.com/webcamoid/DeployTools.git"
 
 set QTDIR=C:\Qt\%QTVER%\msvc2019_64
